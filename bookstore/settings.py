@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-%d$9z0w=0fw9&e#q2$*-fcv45s&w$u$=!(-7g^+#ce%&#c)$kq')
 
-DEBUG = False
+DEBUG = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # The `DYNO` env var is set on Heroku CI, but it's not a real Heroku app, so we have to
@@ -35,7 +35,7 @@ IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if not IS_HEROKU_APP:
-    DEBUG = False
+    DEBUG = True
 
 # On Heroku, it's safe to use a wildcard for `ALLOWED_HOSTS``, since the Heroku router performs
 # validation of the Host header in the incoming HTTP request. On other platforms you may need
@@ -44,7 +44,7 @@ if not IS_HEROKU_APP:
 if IS_HEROKU_APP:
     ALLOWED_HOSTS = ['.herokuapp.com']
 else:
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['.localhost', '127.0.0.1']
 
 
 
