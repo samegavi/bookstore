@@ -25,6 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-%d$9z0w=0fw9&e#q2$*-fcv45s&w$u$=!(-7g^+#ce%&#c)$kq')
 
+DEBUG = False
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # The `DYNO` env var is set on Heroku CI, but it's not a real Heroku app, so we have to
 # also explicitly exclude CI:
