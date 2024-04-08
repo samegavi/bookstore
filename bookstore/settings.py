@@ -60,7 +60,8 @@ INSTALLED_APPS = [
     'books',
     'sales',
     'salespersons',
-    'customers'
+    'customers',
+    'recipes'
 ]
 
 MIDDLEWARE = [
